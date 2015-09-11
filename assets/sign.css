@@ -1,0 +1,39 @@
+div.sign-wrapper {
+         position: relative;
+         width: 100%;
+}
+
+div.sign-wrapper:before {
+         content: "";
+         display: block;
+         padding-top: 50%;
+}
+
+div.sign {
+         position: absolute;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         border: #104B6D 5px solid;
+         color: #104B6D;
+         background: #E4E0CF;
+         text-align: center;
+         line-height: 110%;
+         font-family: 'Oswald', sans-serif;
+         letter-spacing: -2px;
+         font-weight: bold;
+         font-size: 0.8em;
+}
+
+div.days-line {
+         font-size: 1.5em;
+         line-height: 110%;
+}
+
+span.days {
+         color: black;
+         border: #104B6D 3px solid;
+         display: inline-block;
+         padding: 0px 50px;
+}

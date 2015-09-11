@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block meta %}
+<meta http-equiv="refresh" content="3600">
+{% endblock %}
+{% block title %}{{ sign.org }} has worked {{ sign.days }} days without a {{ sign.trouble }}{% endblock %}
+{% block css %}
+    <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel=stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/sign.css">
+{% endblock %}
+{% block body %}
+<div class="sign-wrapper">
+  <div class="sign">
+    <div class="org">{{ sign.org }}</div>
+    <div>HAS WORKED</div>
+    <div class="days-line"><span class="days">{{ sign.days }}</span> DAYS</div>
+    <div>WITHOUT A</div>
+    <div class="trouble">{{ sign.trouble }}</div>
+  </div>
+</div>
+
+<form method="POST" action="/sign/{{ sign.sign_id }}">
+  <button type="submit" name="reset" value="reset">Reset</button>
+</form>
+{% endblock %}
+{% block script %}
+<script src="/assets/jquery.fittext.js"></script>
+<script>
+    jQuery("div.sign-wrapper").fitText();
+</script>
+{% endblock %}

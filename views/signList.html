@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}{{ org }} has worked {{ days }} days without a {{ trouble }}{% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<p>Signs</p>
+<ul>
+{% for sign in signs %}
+  <li><a href="/sign/{{ sign.sign_id }}">{{ sign.org }} - {{ sign.trouble }}</a></li>
+{% endfor %}
+</ul>
+<p>Create New</p>
+<form method="POST" action="/sign/">
+  Org: <input type="text" name="org" /><br />
+  Trouble: <input type="text" name="trouble" /><br />
+  <input type="submit" name="submit" />
+</form>
+
+{% endblock %}
+{% block script %}
+{% endblock %}
